@@ -134,6 +134,7 @@ Daniel Collins <accounts@dac.io>
 Daniel Hahler <git@thequod.de>
 Daniel Holth <dholth@fastmail.fm>
 Daniel Jost <torpedojost@gmail.com>
+Daniel Katz <katzdm@gmail.com>
 Daniel Shaulov <daniel.shaulov@gmail.com>
 Daniele Esposti <expobrain@users.noreply.github.com>
 Daniele Procida <daniele@vurt.org>

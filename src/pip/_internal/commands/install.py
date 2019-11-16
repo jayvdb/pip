@@ -502,12 +502,14 @@ class InstallCommand(RequirementCommand):
 
         if options.target_dir:
             self._handle_target_dir(
-                options.target_dir, target_temp_dir, options.upgrade
+                options.target_dir, target_temp_dir, options.upgrade,
+                options.prefix_path
             )
 
         return SUCCESS
 
-    def _handle_target_dir(self, target_dir, target_temp_dir, upgrade):
+    def _handle_target_dir(
+            self, target_dir, target_temp_dir, upgrade, prefix_path):
         ensure_dir(target_dir)
 
         # Checking both purelib and platlib directories for installed
@@ -517,7 +519,8 @@ class InstallCommand(RequirementCommand):
         with target_temp_dir:
             # Checking both purelib and platlib directories for installed
             # packages to be moved to target directory
-            scheme = distutils_scheme('', home=target_temp_dir.path)
+            scheme = distutils_scheme(
+                '', home=target_temp_dir.path, prefix=prefix_path)
             purelib_dir = scheme['purelib']
             platlib_dir = scheme['platlib']
             data_dir = scheme['data']
