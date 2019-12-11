@@ -253,8 +253,10 @@ def is_manylinux2014_compatible():
         # Fall through to heuristic check below
         pass
 
+    from pip._internal.utils.glibc import have_compatible_glibc
+
     # Check glibc version. CentOS 7 uses glibc 2.17.
-    return pip._internal.utils.glibc.have_compatible_glibc(2, 17)
+    return have_compatible_glibc(2, 17)
 
 
 def get_darwin_arches(major, minor, machine):
